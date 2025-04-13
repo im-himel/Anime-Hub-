@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnimeHub - 9Anime Style Streaming</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header/Navbar -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="AnimeHub">
+        </a>
+      </div>
+      
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+          <li class="nav-item"><a href="popular.html" class="nav-link"><i class="fas fa-fire"></i> Popular</a></li>
+          <li class="nav-item"><a href="genres.html" class="nav-link"><i class="fas fa-list"></i> Genres</a></li>
+          <li class="nav-item"><a href="schedule.html" class="nav-link"><i class="fas fa-calendar"></i> Schedule</a></li>
+          <li class="nav-item"><a href="movies.html" class="nav-link"><i class="fas fa-film"></i> Movies</a></li>
+        </ul>
+      </nav>
+      
+      <div class="search-box">
+        <input type="text" placeholder="Search anime...">
+        <button><i class="fas fa-search"></i></button>
+      </div>
+      
+      <div class="user-actions">
+        <a href="#" class="login-btn" id="loginBtn"><i class="fas fa-user"></i> Login</a>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Watch Anime Online Free</h1>
+      <p>Thousands of anime series and movies with English subtitles or dubbed</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn-primary">Popular Anime</a>
+        <a href="#" class="btn-secondary">Latest Episodes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <!-- Latest Updates Section -->
+      <section class="section">
+        <div class="section-header">
+          <h2><i class="fas fa-bolt"></i> Recently Updated</h2>
+          <a href="#" class="view-all">View All</a>
+        </div>
+        
+        <div class="anime-grid" id="latestUpdates">
+          <!-- Anime cards will be loaded via JS -->
+        </div>
+      </section>
+      
+      <!-- Popular Anime Section -->
+      <section class="section">
+        <div class="section-header">
+          <h2><i class="fas fa-fire"></i> Popular Anime</h2>
+          <a href="#" class="view-all">View All</a>
+        </div>
+        
+        <div class="anime-grid" id="popularAnime">
+          <!-- Anime cards will be loaded via JS -->
+        </div>
+      </section>
+      
+      <!-- Movies Section -->
+      <section class="section">
+        <div class="section-header">
+          <h2><i class="fas fa-film"></i> Anime Movies</h2>
+          <a href="#" class="view-all">View All</a>
+        </div>
+        
+        <div class="anime-grid" id="animeMovies">
+          <!-- Anime cards will be loaded via JS -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>AnimeHub</h3>
+          <p>Watch anime online in high quality. Free download high quality anime. Various formats from 240p to 1080p HD or even 4K resolution.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Popular</a></li>
+            <li><a href="#">Genres</a></li>
+            <li><a href="#">Schedule</a></li>
+            <li><a href="#">Movies</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Information</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">DMCA</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2023 AnimeHub. All Rights Reserved.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-discord"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-header">
+        <h2>Login to AnimeHub</h2>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="username">Username or Email</label>
+            <input type="text" id="username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" required>
+          </div>
+          <div class="form-options">
+            <label>
+              <input type="checkbox"> Remember me
+            </label>
+            <a href="#">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn-primary">Login</button>
+        </form>
+        <div class="auth-divider">
+          <span>or</span>
+        </div>
+        <div class="social-login">
+          <button class="btn-social google">
+            <i class="fab fa-google"></i> Continue with Google
+          </button>
+          <button class="btn-social facebook">
+            <i class="fab fa-facebook"></i> Continue with Facebook
+          </button>
+        </div>
+        <div class="auth-footer">
+          Don't have an account? <a href="#" id="registerLink">Register</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div class="modal" id="registerModal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-header">
+        <h2>Create Account</h2>
+      </div>
+      <div class="modal-body">
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="reg-username">Username</label>
+            <input type="text" id="reg-username" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-email">Email</label>
+            <input type="email" id="reg-email" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-password">Password</label>
+            <input type="password" id="reg-password" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-confirm">Confirm Password</label>
+            <input type="password" id="reg-confirm" required>
+          </div>
+          <button type="submit" class="btn-primary">Register</button>
+        </form>
+        <div class="auth-divider">
+          <span>or</span>
+        </div>
+        <div class="social-login">
+          <button class="btn-social google">
+            <i class="fab fa-google"></i> Continue with Google
+          </button>
+          <button class="btn-social facebook">
+            <i class="fab fa-facebook"></i> Continue with Facebook
+          </button>
+        </div>
+        <div class="auth-footer">
+          Already have an account? <a href="#" id="loginLink">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
